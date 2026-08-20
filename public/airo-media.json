@@ -1,0 +1,543 @@
+{
+  "logo/horizontal": {
+    "mediaType": "image",
+    "currentUrl": "https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/uploads/logo-horizontal-13897719.png",
+    "searchQuery": "jewelry mystery jar logo design pink",
+    "alternatives": [],
+    "userModified": true,
+    "createdAt": "2026-08-20T18:13:23.878Z",
+    "lastUpdated": "2026-08-20T18:13:23.878Z",
+    "uploadSources": {
+      "https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/uploads/logo-horizontal-13897719.png": "reawlab5w2_1787249447951_file_H7FlnRA0la.png"
+    },
+    "uploadContentHash": "60f78dc5c8f8a225eaee040b77c13de11a793789a005deaffebb99896c307d42",
+    "naturalOrientation": "square",
+    "caption": "jewelry mystery jar logo design pink"
+  },
+  "logo/primary": {
+    "mediaType": "logo",
+    "currentUrl": "https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/uploads/logo-horizontal-13897719.png",
+    "searchQuery": "",
+    "alternatives": [],
+    "userModified": true,
+    "createdAt": "2026-08-20T18:13:23.878Z",
+    "lastUpdated": "2026-08-20T18:13:23.878Z",
+    "naturalOrientation": "square",
+    "uploadSources": {
+      "https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/uploads/logo-horizontal-13897719.png": "reawlab5w2_1787249447951_file_H7FlnRA0la.png"
+    }
+  },
+  "products/royal-collection": {
+    "requestedSize": {
+      "width": 500,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "square,vertical",
+    "moods": "warm,bold",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/1928288212",
+    "searchQuery": "premium jewellery collection gold elegant display",
+    "alternatives": [],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:13:24.562Z",
+    "lastUpdated": "2026-08-20T18:13:24.562Z",
+    "gettyId": "1928288212"
+  },
+  "pages/home/hero-1": {
+    "requestedSize": {
+      "width": 1400,
+      "height": 700,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "compositions": "wide_shot",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/1186123087",
+    "searchQuery": "jewellery rings necklaces in glass mason jar",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1193750672",
+      "https://img1.wsimg.com/isteam/getty/1193750787"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:13:24.891Z",
+    "lastUpdated": "2026-08-20T18:13:24.891Z",
+    "gettyId": "1186123087",
+    "alternativeGettyIds": [
+      "1193750672",
+      "1193750787"
+    ]
+  },
+  "pages/home/hero-5": {
+    "requestedSize": {
+      "width": 1400,
+      "height": 700,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/1446544223",
+    "searchQuery": "pink gift unboxing jewellery surprise woman hands",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2236197196",
+      "https://img1.wsimg.com/isteam/getty/2224512627"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:13:28.154Z",
+    "lastUpdated": "2026-08-20T18:13:28.154Z",
+    "gettyId": "1446544223",
+    "alternativeGettyIds": [
+      "2236197196",
+      "2224512627"
+    ]
+  },
+  "products/treasure-trove": {
+    "requestedSize": {
+      "width": 500,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "square,vertical",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2262301362",
+    "searchQuery": "luxury jewellery gift box pink ribbon necklace bracelet",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1251647260",
+      "https://img1.wsimg.com/isteam/getty/2189429354"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:13:29.000Z",
+    "lastUpdated": "2026-08-20T18:13:29.000Z",
+    "gettyId": "2262301362",
+    "alternativeGettyIds": [
+      "1251647260",
+      "2189429354"
+    ]
+  },
+  "pages/home/hero-4": {
+    "requestedSize": {
+      "width": 1400,
+      "height": 700,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2244613860",
+    "searchQuery": "decorative glass jar with jewellery gift pink bow",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1199979113",
+      "https://img1.wsimg.com/isteam/getty/2270045868"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:13:30.429Z",
+    "lastUpdated": "2026-08-20T18:13:30.429Z",
+    "gettyId": "2244613860",
+    "alternativeGettyIds": [
+      "1199979113",
+      "2270045868"
+    ]
+  },
+  "products/golden-glow": {
+    "requestedSize": {
+      "width": 500,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "square,vertical",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2281197825",
+    "searchQuery": "gold jewellery mason jar gift earrings rings",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2223231652",
+      "https://img1.wsimg.com/isteam/getty/2173490724"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:13:31.466Z",
+    "lastUpdated": "2026-08-20T18:13:31.466Z",
+    "gettyId": "2281197825",
+    "alternativeGettyIds": [
+      "2223231652",
+      "2173490724"
+    ]
+  },
+  "pages/home/hero-2": {
+    "requestedSize": {
+      "width": 1400,
+      "height": 700,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "compositions": "wide_shot",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/1440632592",
+    "searchQuery": "mystery gift box jewellery unboxing pink sparkle",
+    "alternatives": [],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:13:31.914Z",
+    "lastUpdated": "2026-08-20T18:13:31.914Z",
+    "gettyId": "1440632592"
+  },
+  "pages/home/hero-3": {
+    "requestedSize": {
+      "width": 1400,
+      "height": 700,
+      "fit": "cover"
+    },
+    "orientations": "horizontal",
+    "compositions": "wide_shot",
+    "moods": "warm,vivid",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/1346705833",
+    "searchQuery": "sparkly gold jewellery flat lay pink background",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1354680196"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:13:32.242Z",
+    "lastUpdated": "2026-08-20T18:13:32.242Z",
+    "gettyId": "1346705833",
+    "alternativeGettyIds": [
+      "1354680196"
+    ]
+  },
+  "products/grand-luxe": {
+    "requestedSize": {
+      "width": 500,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "square,vertical",
+    "moods": "vivid,bold",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/1462047362",
+    "searchQuery": "luxury jewellery unboxing sparkle gold haul collection",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2264390020",
+      "https://img1.wsimg.com/isteam/getty/2272973666"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:13:33.349Z",
+    "lastUpdated": "2026-08-20T18:13:33.349Z",
+    "gettyId": "1462047362",
+    "alternativeGettyIds": [
+      "2264390020",
+      "2272973666"
+    ]
+  },
+  "products/starter-sparkle": {
+    "requestedSize": {
+      "width": 500,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "square,vertical",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2228044810",
+    "searchQuery": "small glass jar with jewellery pink delicate",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/142577953",
+      "https://img1.wsimg.com/isteam/getty/2229069096"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:13:35.085Z",
+    "lastUpdated": "2026-08-20T18:13:35.085Z",
+    "gettyId": "2228044810",
+    "alternativeGettyIds": [
+      "142577953",
+      "2229069096"
+    ]
+  },
+  "pages/how-it-works/step-1": {
+    "requestedSize": {
+      "width": 400,
+      "height": 400,
+      "fit": "cover"
+    },
+    "orientations": "square",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2199407494",
+    "searchQuery": "woman choosing gift online shopping phone happy",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1495133099",
+      "https://img1.wsimg.com/isteam/getty/2178109404"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:17:34.279Z",
+    "lastUpdated": "2026-08-20T18:17:34.279Z",
+    "gettyId": "2199407494",
+    "alternativeGettyIds": [
+      "1495133099",
+      "2178109404"
+    ]
+  },
+  "pages/how-it-works/step-3": {
+    "requestedSize": {
+      "width": 400,
+      "height": 400,
+      "fit": "cover"
+    },
+    "orientations": "square",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/619656774",
+    "searchQuery": "delivery package courier doorstep happy woman",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2188603560",
+      "https://img1.wsimg.com/isteam/getty/1090582454"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:17:35.350Z",
+    "lastUpdated": "2026-08-20T18:17:35.350Z",
+    "gettyId": "619656774",
+    "alternativeGettyIds": [
+      "2188603560",
+      "1090582454"
+    ]
+  },
+  "pages/how-it-works/step-2": {
+    "requestedSize": {
+      "width": 400,
+      "height": 400,
+      "fit": "cover"
+    },
+    "orientations": "square",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2264390020",
+    "searchQuery": "jewellery being packed in gift box pink tissue paper",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2236417505",
+      "https://img1.wsimg.com/isteam/getty/471802969"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:17:36.732Z",
+    "lastUpdated": "2026-08-20T18:17:36.732Z",
+    "gettyId": "2264390020",
+    "alternativeGettyIds": [
+      "2236417505",
+      "471802969"
+    ]
+  },
+  "pages/how-it-works/step-4": {
+    "requestedSize": {
+      "width": 400,
+      "height": 400,
+      "fit": "cover"
+    },
+    "orientations": "square",
+    "moods": "warm,vivid",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/1183104215",
+    "searchQuery": "woman unboxing jewellery surprise excited happy",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1134750026",
+      "https://img1.wsimg.com/isteam/getty/465147062"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:17:37.387Z",
+    "lastUpdated": "2026-08-20T18:17:37.387Z",
+    "gettyId": "1183104215",
+    "alternativeGettyIds": [
+      "1134750026",
+      "465147062"
+    ]
+  },
+  "pages/how-it-works/hero": {
+    "requestedSize": {
+      "width": 1400,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "horizontal,panoramic_horizontal",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2170872289",
+    "searchQuery": "jewellery mystery gift jars pink sparkle flat lay",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1188651796",
+      "https://img1.wsimg.com/isteam/getty/2259088029"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:17:46.641Z",
+    "lastUpdated": "2026-08-20T18:17:46.641Z",
+    "gettyId": "2170872289",
+    "alternativeGettyIds": [
+      "1188651796",
+      "2259088029"
+    ]
+  },
+  "occasions/rakshabandhan": {
+    "requestedSize": {
+      "width": 500,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "square",
+    "moods": "warm,vivid",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/453032047",
+    "searchQuery": "sisters celebrating Raksha Bandhan rakhi tying wrist happy",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/481890621"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:27:08.768Z",
+    "lastUpdated": "2026-08-20T18:27:08.768Z",
+    "gettyId": "453032047",
+    "alternativeGettyIds": [
+      "481890621"
+    ]
+  },
+  "occasions/mothers-day": {
+    "requestedSize": {
+      "width": 500,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "square",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/637127620",
+    "searchQuery": "mother daughter gift flowers mothers day celebration love",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/480752633",
+      "https://img1.wsimg.com/isteam/getty/1132564284"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:27:09.199Z",
+    "lastUpdated": "2026-08-20T18:27:09.199Z",
+    "gettyId": "637127620",
+    "alternativeGettyIds": [
+      "480752633",
+      "1132564284"
+    ]
+  },
+  "occasions/bride-to-be": {
+    "requestedSize": {
+      "width": 500,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "square",
+    "moods": "warm,vivid",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/138043147",
+    "searchQuery": "bride to be bridal shower jewellery gift pink celebration",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2281197825",
+      "https://img1.wsimg.com/isteam/getty/465147062"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:27:11.104Z",
+    "lastUpdated": "2026-08-20T18:27:11.104Z",
+    "gettyId": "138043147",
+    "alternativeGettyIds": [
+      "2281197825",
+      "465147062"
+    ]
+  },
+  "occasions/mom-to-be": {
+    "requestedSize": {
+      "width": 500,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "square",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/1002050850",
+    "searchQuery": "pregnant woman baby shower gift pink celebration mom to be",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/500288857",
+      "https://img1.wsimg.com/isteam/getty/1193854632"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:27:11.459Z",
+    "lastUpdated": "2026-08-20T18:27:11.459Z",
+    "gettyId": "1002050850",
+    "alternativeGettyIds": [
+      "500288857",
+      "1193854632"
+    ]
+  },
+  "pages/about/founder": {
+    "requestedSize": {
+      "width": 600,
+      "height": 600,
+      "fit": "cover"
+    },
+    "orientations": "square",
+    "moods": "warm,vivid",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/1358918118",
+    "searchQuery": "young woman magical sparkle wand fairy mystery pink glitter",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1704262564",
+      "https://img1.wsimg.com/isteam/getty/1824605073"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:31:54.565Z",
+    "lastUpdated": "2026-08-20T18:31:54.565Z",
+    "gettyId": "1358918118",
+    "alternativeGettyIds": [
+      "1704262564",
+      "1824605073"
+    ]
+  },
+  "pages/about/hero": {
+    "requestedSize": {
+      "width": 1400,
+      "height": 500,
+      "fit": "cover"
+    },
+    "orientations": "horizontal,panoramic_horizontal",
+    "moods": "warm,vivid",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2256436017",
+    "searchQuery": "pink sparkle magic jewellery flat lay gold glitter bokeh",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/2281961298",
+      "https://img1.wsimg.com/isteam/getty/1193040728"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:31:59.699Z",
+    "lastUpdated": "2026-08-20T18:31:59.699Z",
+    "gettyId": "2256436017",
+    "alternativeGettyIds": [
+      "2281961298",
+      "1193040728"
+    ]
+  },
+  "pages/about/jar-story": {
+    "requestedSize": {
+      "width": 600,
+      "height": 600,
+      "fit": "cover"
+    },
+    "orientations": "square",
+    "moods": "warm",
+    "mediaType": "image",
+    "currentUrl": "https://img1.wsimg.com/isteam/getty/2173532703",
+    "searchQuery": "glass mason jar jewellery rings earrings pink ribbon gift close up",
+    "alternatives": [
+      "https://img1.wsimg.com/isteam/getty/1297938803",
+      "https://img1.wsimg.com/isteam/getty/959058152"
+    ],
+    "userModified": false,
+    "createdAt": "2026-08-20T18:32:08.839Z",
+    "lastUpdated": "2026-08-20T18:32:08.839Z",
+    "gettyId": "2173532703",
+    "alternativeGettyIds": [
+      "1297938803",
+      "959058152"
+    ]
+  }
+}
