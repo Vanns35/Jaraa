@@ -15,7 +15,7 @@ import { formatPrice } from '@/lib/stripe/format';
 
 export default function CartPage() {
   const { t } = useTranslation();
-  const { cart, removeFromCart, updateQuantity, clearCart, cartTotal, cartCount } = useCart();
+  const { cart, removeFromCart, updateQuantity, clearCart, cartTotal, cartCount, addToCart } = useCart();
   const [checkingOut, setCheckingOut] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -56,21 +56,23 @@ export default function CartPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
+    <div className="min-h-screen bg-background py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <Link
-            to="/"
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-4"
-          >
-            <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            {t('stripe.link_continue_shopping')}
+          <Link to="/" className="inline-flex items-center text-primary hover:underline mb-4">
+            ← Continue shopping
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900">{t('stripe.cart_title')}</h1>
-          <p className="text-gray-600 mt-1">{cartCount} {cartCount === 1 ? t('stripe.item_singular') : t('stripe.items_plural')}</p>
+
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-bold text-foreground">🫙 Your Jaraa</h1>
+              <p className="text-muted-foreground mt-1">{cart[0]?.name ?? 'The Everyday Glam Jar'}</p>
+            </div>
+            <div className="text-right text-sm text-muted-foreground">
+              <div>{cartCount} {cartCount === 1 ? t('stripe.item_singular') : t('stripe.items_plural')}</div>
+            </div>
+          </div>
         </div>
 
         {/* Error Message */}
@@ -96,118 +98,171 @@ export default function CartPage() {
             </Link>
           </div>
         ) : (
-          <>
-            {/* Cart Items */}
-            <div className="bg-white rounded-2xl shadow-sm overflow-hidden mb-6">
-              {cart.map((item, index) => (
-                <div
-                  key={item.id}
-                  className={`flex items-center gap-4 p-6 ${index > 0 ? 'border-t border-gray-100' : ''}`}
-                >
-                  {/* Product Image */}
-                  {item.image ? (
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-24 h-24 object-cover rounded-lg"
-                    />
-                  ) : (
-                    <div className="w-24 h-24 bg-gray-100 rounded-lg flex items-center justify-center">
-                      <svg className="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                      </svg>
-                    </div>
-                  )}
-
-                  {/* Product Info */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-gray-900 truncate">{item.name}</h3>
-                    <p className="text-gray-600">{formatPrice(item.price, item.currency)}</p>
-                  </div>
-
-                  {/* Quantity Controls */}
-                  <div className="flex items-center gap-3">
-                    <button
-                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                      className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-300 hover:bg-gray-50 text-lg font-medium text-gray-900"
-                    >
-                      −
-                    </button>
-                    <span className="w-8 text-center font-semibold text-lg text-gray-900">{item.quantity}</span>
-                    <button
-                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                      className="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-300 hover:bg-gray-50 text-lg font-medium text-gray-900"
-                    >
-                      +
-                    </button>
-                  </div>
-
-                  {/* Subtotal */}
-                  <div className="text-right min-w-[100px]">
-                    <p className="font-bold text-gray-900">
-                      {formatPrice(item.price * item.quantity, item.currency)}
-                    </p>
-                  </div>
-
-                  {/* Remove Button */}
-                  <button
-                    onClick={() => removeFromCart(item.id)}
-                    className="p-2 text-gray-400 hover:text-red-500 transition-colors"
-                    title="Remove item"
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Left column: items, gift message, add-ons */}
+            <div className="lg:col-span-2">
+              <div className="bg-card rounded-2xl shadow-sm overflow-hidden mb-6">
+                {cart.map((item, index) => (
+                  <div
+                    key={item.id}
+                    className={`flex items-center gap-4 p-6 ${index > 0 ? 'border-t border-muted-foreground/12' : ''}`}
                   >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
-                  </button>
-                </div>
-              ))}
-            </div>
+                    {/* Product Image */}
+                    {item.image ? (
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-28 h-28 object-cover rounded-xl"
+                      />
+                    ) : (
+                      <div className="w-28 h-28 bg-muted rounded-xl flex items-center justify-center">
+                        <svg className="w-10 h-10 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                      </div>
+                    )}
 
-            {/* Order Summary */}
-            <div className="bg-white rounded-2xl shadow-sm p-6">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">{t('stripe.order_summary_title')}</h2>
+                    {/* Product Info */}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-foreground truncate" style={{ fontFamily: 'var(--font-heading)' }}>{item.name}</h3>
+                      <p className="text-muted-foreground">{formatPrice(item.price, item.currency)}</p>
+                      <p className="text-sm text-muted-foreground mt-2">Quantity: {item.quantity}</p>
+                    </div>
 
-              <div className="space-y-3 mb-6">
-                <div className="flex justify-between text-gray-600">
-                  <span>{t('stripe.subtotal_label')} ({cartCount} {cartCount === 1 ? t('stripe.item_singular') : t('stripe.items_plural')})</span>
-                  <span>{formatPrice(cartTotal, cart[0]?.currency || 'usd')}</span>
-                </div>
-                <div className="border-t pt-3 flex justify-between text-xl font-bold text-gray-900">
-                  <span>{t('stripe.total_label')}</span>
-                  <span>{formatPrice(cartTotal, cart[0]?.currency || 'usd')}</span>
+                    {/* Quantity Controls */}
+                    <div className="flex items-center gap-3">
+                      <button
+                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        className="w-9 h-9 flex items-center justify-center rounded-lg border border-muted-foreground/20 hover:bg-muted text-lg font-medium text-foreground"
+                      >
+                        −
+                      </button>
+                      <span className="w-8 text-center font-semibold text-lg text-foreground">{item.quantity}</span>
+                      <button
+                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        className="w-9 h-9 flex items-center justify-center rounded-lg border border-muted-foreground/20 hover:bg-muted text-lg font-medium text-foreground"
+                      >
+                        +
+                      </button>
+                    </div>
+
+                    {/* Subtotal */}
+                    <div className="text-right min-w-[110px]">
+                      <p className="font-bold text-foreground">
+                        {formatPrice(item.price * item.quantity, item.currency)}
+                      </p>
+                    </div>
+
+                    {/* Remove Button */}
+                    <button
+                      onClick={() => removeFromCart(item.id)}
+                      className="p-2 text-muted-foreground hover:text-destructive transition-colors"
+                      title="Remove item"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      </svg>
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+              {/* Gift message */}
+              <div className="bg-card rounded-2xl p-6 shadow-sm mb-6">
+                <h3 className="text-lg font-semibold text-foreground mb-2">Add a gift message</h3>
+                <p className="text-sm text-muted-foreground mb-3">Add a personal note 💌</p>
+                <textarea placeholder="Write a short message (optional)" className="w-full p-3 rounded-lg border border-muted-foreground/10 bg-background text-foreground"></textarea>
+              </div>
+
+              {/* Add-ons */}
+              <div className="bg-card rounded-2xl p-6 shadow-sm mb-6">
+                <h3 className="text-lg font-semibold text-foreground mb-2">Add-ons</h3>
+                <p className="text-sm text-muted-foreground mb-4">Boost the unboxing experience.</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <label className="flex items-center gap-3 p-3 rounded-lg border border-muted-foreground/10">
+                    <input type="checkbox" className="w-4 h-4" disabled />
+                    <div>
+                      <div className="font-medium text-foreground">🎀 Gift wrap</div>
+                      <div className="text-sm text-muted-foreground">Coming soon</div>
+                    </div>
+                  </label>
+                  <label className="flex items-center gap-3 p-3 rounded-lg border border-muted-foreground/10">
+                    <input type="checkbox" className="w-4 h-4" disabled />
+                    <div>
+                      <div className="font-medium text-foreground">💌 Personal note</div>
+                      <div className="text-sm text-muted-foreground">Add a handwritten note</div>
+                    </div>
+                  </label>
                 </div>
               </div>
 
-              <button
-                onClick={handleCheckout}
-                disabled={checkingOut}
-                className={`w-full py-4 px-6 rounded-lg font-medium text-lg transition-colors ${
-                  checkingOut
-                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
-                }`}
-              >
-                {checkingOut ? (
-                  <span className="flex items-center justify-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                    </svg>
-                    {t('stripe.btn_processing')}
-                  </span>
-                ) : (
-                  t('stripe.btn_proceed_to_checkout')
-                )}
-              </button>
-
-              <button
-                onClick={clearCart}
-                className="w-full mt-3 py-2 text-gray-500 hover:text-red-500 text-sm transition-colors"
-              >
-                {t('stripe.btn_clear_cart')}
-              </button>
+              {/* You may also like */}
+              <div className="bg-card rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-foreground mb-3">You may also like</h3>
+                <div className="flex items-center gap-4">
+                  <div className="w-20 h-20 rounded-lg overflow-hidden bg-muted">
+                    <img src="/Home/hero-2.png" alt="Surprise add-on" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-semibold text-foreground">Add a surprise</div>
+                    <div className="text-sm text-muted-foreground">A small extra to make the jar extra special.</div>
+                  </div>
+                  <div className="text-right">
+                    <button
+                      onClick={() => {
+                        const currency = cart[0]?.currency || 'inr';
+                        addToCart({ id: 'addon-199', name: 'Surprise Add-on', price: 199, currency, priceId: 'addon_199' });
+                      }}
+                      className="px-4 py-2 rounded-full bg-accent text-accent-foreground font-semibold"
+                    >
+                      Add for ₹199
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </>
+
+            {/* Right column: order summary */}
+            <div>
+              <div className="bg-card rounded-2xl shadow-sm p-6">
+                <h2 className="text-lg font-semibold text-foreground mb-4">Order summary</h2>
+
+                <div className="space-y-3 mb-4">
+                  <div className="flex justify-between text-muted-foreground">
+                    <span>Subtotal</span>
+                    <span>{formatPrice(cartTotal, cart[0]?.currency || 'usd')}</span>
+                  </div>
+                  <div className="flex justify-between text-muted-foreground">
+                    <span>Shipping</span>
+                    <span>Calculated at checkout</span>
+                  </div>
+                  <div className="flex justify-between text-muted-foreground">
+                    <span>Discount</span>
+                    <span>-</span>
+                  </div>
+                </div>
+
+                <div className="border-t pt-4 flex justify-between text-xl font-bold text-foreground mb-4">
+                  <span>Total</span>
+                  <span>{formatPrice(cartTotal, cart[0]?.currency || 'usd')}</span>
+                </div>
+
+                <button
+                  onClick={handleCheckout}
+                  disabled={checkingOut}
+                  className={`w-full py-3 px-4 rounded-lg font-medium transition-all ${
+                    checkingOut ? 'bg-muted text-muted-foreground cursor-not-allowed' : 'bg-primary text-primary-foreground hover:bg-primary/90'
+                  }`}
+                >
+                  {checkingOut ? t('stripe.btn_processing') : 'Proceed to Checkout'}
+                </button>
+
+                <button onClick={clearCart} className="w-full mt-3 py-2 text-sm text-muted-foreground hover:text-destructive transition-colors">
+                  Clear cart
+                </button>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
