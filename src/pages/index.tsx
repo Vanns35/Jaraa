@@ -5,6 +5,8 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import Autoplay from 'embla-carousel-autoplay';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import MagicInside from '@/components/home/MagicInside';
+import WhyJaraa from '@/components/home/WhyJaraa';
 
 const cardVariants = {
   hidden: { opacity: 0, y: 32 },
@@ -138,6 +140,12 @@ export default function HomePage() {
             </CarouselContent>
           </Carousel>
         </section>
+
+        {/* ── How does a jar look? ── */}
+        <MagicInside />
+
+        {/* ── Why Jaraa (cards) ── */}
+        <WhyJaraa />
 
         {/* ── Gold shimmer divider ── */}
         <div
