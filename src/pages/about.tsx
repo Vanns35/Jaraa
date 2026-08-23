@@ -3,6 +3,7 @@ import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import { Sparkles, Heart, Star, Wand2 } from 'lucide-react';
+import WhyJaraa from '@/components/home/WhyJaraa';
 
 export default function AboutPage() {
   const site = 'https://jaraa.in';
@@ -266,6 +267,60 @@ export default function AboutPage() {
                 </div>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* Gold divider */}
+        <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)' }} />
+
+        {/* ── Why Jaraa cards (moved from homepage) ── */}
+        <WhyJaraa />
+        
+        {/* Gold divider */}
+        <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)' }} />
+
+        {/* ── Philosophy & Promise ── */}
+        <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-card">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h3
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-2xl md:text-3xl font-bold text-primary"
+              style={{ fontFamily: 'var(--font-heading)' }}
+            >
+              Our Philosophy
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, y: 6 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.08 }}
+              className="text-foreground font-semibold mt-3"
+            >
+              Choose less. Discover more.
+            </motion.p>
+
+            <motion.h3
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.12 }}
+              className="text-2xl md:text-3xl font-bold text-primary mt-8"
+              style={{ fontFamily: 'var(--font-heading)' }}
+            >
+              Our Promise
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, y: 6 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-foreground font-semibold mt-3 max-w-2xl mx-auto"
+            >
+              Every Jaraa should feel like opening a little gift from yourself — or someone who knows you well.
+            </motion.p>
           </div>
         </section>
 
