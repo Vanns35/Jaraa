@@ -1,39 +1,45 @@
 {
   "heroSlides": [
     {
-      "src": "https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/pages/home/hero-1",
+      "src": "../../public/home/hero-1.png",
+      "alt": "Pink gift unboxing jewellery surprise",
+      "headline": "Mystery Jars Full of Joy 💛",
+      "sub": "Open a jar. Find your sparkle.",
+      "ctaLabel": "Explore Jars",
+      "ctaTo": "/shop",
+      "id": "pcDtWaIA4hhRWDwcg-kC7"
+    },
+    {
+      "src": "../../public/home/hero-2.png",
       "alt": "Jewellery rings and necklaces in a glass mason jar",
-      "headline": "Unbox a Little Sparkle ✨",
-      "sub": "Mystery jars filled with handpicked jewellery — just for you.",
+      "ctaLabel": "Shop Mystery Jars",
+      "ctaTo": "/shop",
       "id": "ijM9Jaes3Y-BbZMNdCKTg"
     },
     {
       "src": "https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/pages/home/hero-2",
       "alt": "Mystery gift box with jewellery unboxing pink sparkle",
-      "headline": "Mystery Jars Full of Joy 💛",
-      "sub": "Every jar is a surprise. Every piece is a treasure.",
+      "headline": "What's Inside? 👀",
+      "sub": "You choose the budget.\nWe create the surprise.",
+      "ctaLabel": "Explore Jars",
+      "ctaTo": "/shop",
       "id": "-_0pTQiQ0URuW-S578r54"
     },
     {
-      "src": "https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/pages/home/hero-3",
+      "src": "./../public/home/hero-3.png",
       "alt": "Sparkly gold jewellery flat lay on pink background",
-      "headline": "The Perfect Gift, Every Time 🎁",
-      "sub": "For yourself or someone you love — choose your jar.",
+      "headline": "A Surprise for Every Occasion",
+      "sub": "Birthday • Bride-to-be • Mom-to-be • Raksha Bandhan",
+      "ctaLabel": "Shop by Occasion",
+      "ctaTo": "/shop",
       "id": "icQ6FgccyxXZyhJCTvb7T"
     },
     {
-      "src": "https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/pages/home/hero-4",
+      "src": "./../public/home/hero-4.png",
       "alt": "Decorative glass jar with jewellery and pink bow",
-      "headline": "Unbox a Little Sparkle ✨",
-      "sub": "Curated jewellery surprises, beautifully jarred.",
+      "ctaLabel": "Start Exploring",
+      "ctaTo": "/shop",
       "id": "1WJknsbnCAKKFLWSoWgTi"
-    },
-    {
-      "src": "https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/pages/home/hero-5",
-      "alt": "Pink gift unboxing jewellery surprise",
-      "headline": "Mystery Jars Full of Joy 💛",
-      "sub": "Open a jar. Find your sparkle.",
-      "id": "pcDtWaIA4hhRWDwcg-kC7"
     }
   ],
   "products": [

@@ -97,23 +97,27 @@ export default function HomePage() {
                     />
                     {/* Slide text */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
-                      <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, ease: 'easeOut' }}
-                        className="text-3xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg mb-3"
-                        style={{ fontFamily: 'var(--font-heading)' }}
-                      >
-                        {slide.headline}
-                      </motion.h1>
-                      <motion.p
-                        initial={{ opacity: 0, y: 16 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
-                        className="text-base md:text-xl text-white/90 drop-shadow mb-6 max-w-lg"
-                      >
-                        {slide.sub}
-                      </motion.p>
+                      {slide.headline &&
+                        <motion.h1
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.7, ease: 'easeOut' }}
+                          className="text-3xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg mb-3"
+                          style={{ fontFamily: 'var(--font-heading)' }}
+                        >
+                          {slide.headline}
+                        </motion.h1>
+                      }
+                      {slide.sub &&
+                        <motion.p
+                          initial={{ opacity: 0, y: 16 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+                          className="text-base md:text-xl text-white/90 drop-shadow mb-6 max-w-lg"
+                        >
+                          {slide.sub}
+                        </motion.p>
+                      }
                       <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -121,10 +125,10 @@ export default function HomePage() {
                         className="pointer-events-auto"
                       >
                         <Link
-                          to="/#shop"
+                          to={slide.ctaTo ?? '/#shop'}
                           className="inline-block px-8 py-3 rounded-full font-bold text-sm md:text-base bg-accent text-foreground shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
                         >
-                          Shop Now ✨
+                          {slide.ctaLabel ?? 'Shop Now ✨'}
                         </Link>
                       </motion.div>
                     </div>

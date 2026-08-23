@@ -5,8 +5,10 @@ export const schemas = {
       "heroSlides": z.array(z.object({
         "src": z.string(),
         "alt": z.string(),
-        "headline": z.string(),
-        "sub": z.string(),
+        "headline": z.string().optional(),
+        "ctaLabel": z.string(),
+        "ctaTo": z.string(),
+        "sub": z.string().optional(),
         "id": z.string()
       })),
       "products": z.array(z.object({
