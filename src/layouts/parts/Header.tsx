@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import { Heart, House, Info, MapPin, Menu, Search, ShoppingCart, User, X } from 'lucide-react';
 import { useCart } from '@/contexts/use-cart';
+import { AccountMenu } from '@/components/ui/account-menu';
 
 const mobileNavLinks = [
   { label: 'Home', to: '/', icon: House },
@@ -18,6 +19,13 @@ const mobileMenuLinks = [
   { label: 'Wishlist', to: '/' },
   { label: 'Account', to: '/' },
   { label: 'Cart', to: '/cart' },
+];
+
+const accountMenuItems = [
+  { label: 'Profile', to: '/' },
+  { label: 'Address', to: '/' },
+  { label: 'Orders', to: '/' },
+  { label: 'Settings', to: '/' },
 ];
 
 export default function Header() {
@@ -99,13 +107,17 @@ export default function Header() {
                 )}
               </Link>
 
+              <div className="hidden lg:block">
+                <AccountMenu items={accountMenuItems} />
+              </div>
+
               <Link
                 to="/"
-                className="flex items-center gap-2 rounded-full px-2 py-2 text-sm font-medium text-zinc-700 transition hover:bg-white/60"
+                className="flex items-center gap-2 rounded-full px-2 py-2 text-sm font-medium text-zinc-700 transition hover:bg-white/60 lg:hidden"
                 aria-label="Account"
               >
                 <User className="h-5 w-5" />
-                <span className="hidden xl:inline">Account</span>
+                <span className="hidden sm:inline">Account</span>
               </Link>
 
               <button
