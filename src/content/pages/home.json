@@ -1,7 +1,7 @@
 {
   "heroSlides": [
     {
-      "src": "../../public/Home/hero-1.png",
+      "src": "/Home/hero-1.png",
       "alt": "Pink gift unboxing jewellery surprise",
       "headline": "Mystery Jars Full of Joy 💛",
       "sub": "Open a jar. Find your sparkle.",
@@ -10,7 +10,7 @@
       "id": "pcDtWaIA4hhRWDwcg-kC7"
     },
     {
-      "src": "../../public/Home/hero-2.png",
+      "src": "/Home/hero-2.png",
       "alt": "Jewellery rings and necklaces in a glass mason jar",
       "ctaLabel": "Shop Mystery Jars",
       "ctaTo": "/shop",
@@ -26,7 +26,7 @@
       "id": "-_0pTQiQ0URuW-S578r54"
     },
     {
-      "src": "./../public/Home/hero-3.png",
+      "src": "/Home/hero-3.png",
       "alt": "Sparkly gold jewellery flat lay on pink background",
       "headline": "A Surprise for Every Occasion",
       "sub": "Birthday • Bride-to-be • Mom-to-be • Raksha Bandhan",
@@ -35,7 +35,7 @@
       "id": "icQ6FgccyxXZyhJCTvb7T"
     },
     {
-      "src": "./../public/Home/hero-4.png",
+      "src": "/Home/hero-4.png",
       "alt": "Decorative glass jar with jewellery and pink bow",
       "ctaLabel": "Start Exploring",
       "ctaTo": "/shop",
