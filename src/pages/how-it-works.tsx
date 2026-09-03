@@ -3,6 +3,7 @@ import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import { ShoppingBag, PackageCheck, Truck, Sparkles, Star, Heart } from 'lucide-react';
+import GoldDivider from '@/components/ui/gold-divider';
 
 const stepsMeta = [
   {
@@ -93,13 +94,7 @@ export default function HowItWorksPage() {
         </section>
 
         {/* Gold divider */}
-        <div
-          className="h-1 w-full"
-          style={{
-            background:
-              'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)',
-          }}
-        />
+        <GoldDivider />
 
         {/* ── Steps ── */}
         <section id="how-it-works" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-background">
@@ -167,13 +162,7 @@ export default function HowItWorksPage() {
         </section>
 
         {/* Gold divider */}
-        <div
-          className="h-1 w-full"
-          style={{
-            background:
-              'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)',
-          }}
-        />
+        <GoldDivider />
 
         {/* ── Testimonials ── */}
         <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-card">
@@ -232,13 +221,7 @@ export default function HowItWorksPage() {
         </section>
 
         {/* Gold divider */}
-        <div
-          className="h-1 w-full"
-          style={{
-            background:
-              'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)',
-          }}
-        />
+        <GoldDivider />
 
         {/* ── FAQ ── */}
         <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-background">
@@ -279,13 +262,7 @@ export default function HowItWorksPage() {
 
 
         {/* Gold divider */}
-        <div
-          className="h-1 w-full"
-          style={{
-            background:
-              'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)',
-          }}
-        />
+        <GoldDivider />
 
         {/* ── Important to Know ── */}
         <section className="py-14 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted">
@@ -410,14 +387,7 @@ export default function HowItWorksPage() {
         </section>
 
         {/* Gold divider */}
-        <div
-          className="h-1 w-full"
-          style={{
-            background:
-              'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)',
-          }}
-        />
-
+        <GoldDivider />
 
         {/* ── CTA Banner ── */}
         <section

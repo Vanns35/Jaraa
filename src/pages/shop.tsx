@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 import { Heart } from 'lucide-react';
 import { useCart } from '@/contexts/use-cart';
 import { formatPrice } from '@/lib/stripe/format';
+import GoldDivider from '@/components/ui/gold-divider';
 
 // ── Product type ─────────────────────────────────────────────────────────────
 interface Product {
@@ -299,7 +300,7 @@ export default function ShopPage() {
         </section>
 
         {/* Gold divider */}
-        <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)' }} />
+        <GoldDivider/>
 
         {/* ── Tab Content ── */}
         <AnimatePresence mode="wait">
@@ -541,7 +542,7 @@ export default function ShopPage() {
         </AnimatePresence>
 
         {/* Gold divider */}
-        <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)' }} />
+        <GoldDivider />
 
         {/* ── Policy reminder ── */}
         <section className="py-10 px-4 sm:px-6 lg:px-8 bg-muted">

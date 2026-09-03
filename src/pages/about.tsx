@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import { Sparkles, Heart, Star, Wand2 } from 'lucide-react';
 import WhyJaraa from '@/components/home/WhyJaraa';
+import GoldDivider from '@/components/ui/gold-divider';
 
 export default function AboutPage() {
   const site = 'https://jaraa.in';
@@ -77,7 +78,7 @@ export default function AboutPage() {
         </section>
 
         {/* Gold divider */}
-        <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)' }} />
+        <GoldDivider />
 
         {/* ── Founder Section ── */}
         <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-background">
@@ -178,7 +179,7 @@ export default function AboutPage() {
         </section>
 
         {/* Gold divider */}
-        <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)' }} />
+        <GoldDivider />
 
         {/* ── The Jar Story ── */}
         <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-card">
@@ -271,13 +272,13 @@ export default function AboutPage() {
         </section>
 
         {/* Gold divider */}
-        <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)' }} />
+        <GoldDivider />
 
         {/* ── Why Jaraa cards (moved from homepage) ── */}
         <WhyJaraa />
         
         {/* Gold divider */}
-        <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)' }} />
+        <GoldDivider />
 
         {/* ── Philosophy & Promise ── */}
         <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-card">
@@ -325,7 +326,7 @@ export default function AboutPage() {
         </section>
 
         {/* Gold divider */}
-        <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)' }} />
+        <GoldDivider />
 
         {/* ── Values ── */}
         <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-background">
@@ -368,7 +369,7 @@ export default function AboutPage() {
         </section>
 
         {/* Gold divider */}
-        <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, transparent, hsl(var(--accent)), hsl(var(--accent)/0.6), hsl(var(--accent)), transparent)' }} />
+        <GoldDivider />
 
         {/* ── CTA ── */}
         <section
