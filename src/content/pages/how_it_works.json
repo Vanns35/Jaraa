@@ -4,7 +4,7 @@
       "number": "01",
       "title": "Pick Your Jar",
       "description": "Choose a mystery jar that fits your budget — from ₹500 to ₹10,000. Each tier is packed with more sparkle than the last!",
-      "image": "https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/pages/how-it-works/step-1",
+      "image": "products/step-1.png",
       "alt": "Woman choosing a gift online happily",
       "color": "from-pink-100 to-rose-50",
       "id": "epznvyouGFdD9hlWQihig"
@@ -13,7 +13,7 @@
       "number": "02",
       "title": "We Curate the Magic",
       "description": "Our team handpicks mystery jewellery pieces — rings, earrings, necklaces, bracelets — and seals them in your beautiful jar. No peeking!",
-      "image": "https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/pages/how-it-works/step-2",
+      "image": "products/step-2.png",
       "alt": "Jewellery being packed in a pink gift box",
       "color": "from-amber-50 to-yellow-50",
       "id": "pSQIRZ2mtLlVyqa4eNP4L"
@@ -22,7 +22,7 @@
       "number": "03",
       "title": "Delivered to Your Door",
       "description": "Your sealed mystery jar is carefully wrapped and shipped to you. Fast delivery across India — usually within 3–5 business days.",
-      "image": "https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/pages/how-it-works/step-3",
+      "image": "products/step-3.png",
       "alt": "Delivery package arriving at doorstep",
       "color": "from-rose-50 to-pink-100",
       "id": "ISQivErwigVsmPGHf--7W"
@@ -31,7 +31,7 @@
       "number": "04",
       "title": "Unbox & Sparkle!",
       "description": "Open your jar and discover your treasures! Every unboxing is a unique experience. Share your haul and tag us — we love seeing your sparkle! ✨",
-      "image": "https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/pages/how-it-works/step-4",
+      "image": "products/step-4.png",
       "alt": "Woman excitedly unboxing jewellery surprise",
       "color": "from-yellow-50 to-amber-50",
       "id": "ATbQ1lFoRXbqbZj8pCNap"

@@ -6,25 +6,25 @@ const steps = [
     id: 'pick',
     title: 'Pick your jar',
     subtitle: 'Closed Jar',
-    img: '/Home/hero-1.png',
+    img: '/products/step-1.png',
   },
   {
     id: 'curate',
     title: 'We curate',
     subtitle: 'Packaging',
-    img: '/Home/hero-2.png',
+    img: '/products/step-2.png',
   },
   {
     id: 'pack',
     title: 'We pack',
     subtitle: 'Open Jar',
-    img: '/Home/hero-3.png',
+    img: '/products/step-3.png',
   },
   {
     id: 'unbox',
     title: 'You unbox',
     subtitle: 'Jewellery',
-    img: '/Home/hero-4.png',
+    img: '/products/step-4.png',
   },
 ];
 

@@ -43,7 +43,7 @@ export default function AboutPage() {
         <section className="relative overflow-hidden">
           <div className="relative h-64 md:h-80">
             <img
-              src="https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/pages/about/hero"
+              src="/about-background.png"
               alt="Sparkling jewellery magic"
               className="w-full h-full object-cover"
               loading="eager"
@@ -98,7 +98,7 @@ export default function AboutPage() {
                   style={{ border: '3px solid hsl(var(--accent)/0.5)' }}
                 >
                   <img
-                    src="https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/pages/about/founder"
+                    src="founder.png"
                     alt="The mystery girl founder of Jaraa"
                     className="w-full aspect-square object-cover"
                     loading="lazy"
@@ -199,7 +199,7 @@ export default function AboutPage() {
                   style={{ border: '3px solid hsl(var(--accent)/0.4)' }}
                 >
                   <img
-                    src="https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/pages/about/jar-story"
+                    src="/why-jaraa.png"
                     alt="Jaraa mystery jewellery jar with ribbon"
                     className="w-full aspect-square object-cover"
                     loading="lazy"

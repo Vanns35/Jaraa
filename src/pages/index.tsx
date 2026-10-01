@@ -1,9 +1,11 @@
 import { home } from 'virtual:content';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import Autoplay from 'embla-carousel-autoplay';
+import ProductModal from '@/components/product/ProductModal';
+import { useCart } from '@/contexts/use-cart';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import MagicInside from '@/components/home/MagicInside';
 
@@ -51,6 +53,59 @@ export default function HomePage() {
         dateModified: '2026-08-20',
       },
     ],
+  };
+  const { addToCart } = useCart();
+  const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [checkoutLoading, setCheckoutLoading] = useState<string | null>(null);
+
+  const mapHomeProduct = (p: any) => {
+    // map home product shape to modal product shape expected by ProductModal
+    const rawPrice = (p.price || '').toString().replace(/[^0-9.]/g, '');
+    const numeric = Number(rawPrice) || 0;
+    // modal expects amount in smallest currency unit (paise)
+    const amount = Math.round(numeric * 100);
+    return {
+      id: p.id || p.name,
+      images: [p.src],
+      name: p.name,
+      emoji: p.emoji,
+      amount,
+      currency: 'inr',
+      description: p.description ?? null,
+      contents: p.contents ?? [],
+    };
+  };
+
+  const handleCheckout = async (product: any) => {
+    setCheckoutLoading(product.id);
+    try {
+      const response = await fetch('/api/stripe/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priceId: product.priceId }),
+      });
+      const data = await response.json();
+      if (data.success && data.url) {
+        sessionStorage.setItem('stripe-buy-now-session', data.sessionId ?? '');
+        window.location.href = data.url;
+      }
+    } catch {
+      // ignore
+    } finally {
+      setCheckoutLoading(null);
+    }
+  };
+
+  const handleAddToCart = (product: any) => {
+    addToCart({
+      id: product.id,
+      priceId: product.priceId ?? '',
+      name: product.name,
+      price: product.amount,
+      currency: product.currency ?? 'inr',
+      image: product.images ? product.images[0] : product.src,
+    });
   };
 
   return (
@@ -139,6 +194,19 @@ export default function HomePage() {
             </CarouselContent>
           </Carousel>
         </section>
+
+        {/* Product modal reused from Shop */}
+        <ProductModal
+          open={isDialogOpen}
+          product={selectedProduct}
+          onClose={() => setIsDialogOpen(false)}
+          onAddToCart={(p) => handleAddToCart(p)}
+          onBuyNow={(p) => {
+            setIsDialogOpen(false);
+            handleCheckout(p);
+          }}
+          checkingOut={checkoutLoading}
+        />
 
         {/* ── Gold shimmer divider ── */}
         <div
@@ -242,7 +310,14 @@ export default function HomePage() {
                     </p>
 
                     {/* CTA */}
-                    <button className="mt-auto w-full py-2.5 rounded-full text-sm font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-sm hover:shadow-md">
+                    <button
+                      onClick={() => {
+                        const modalProduct = mapHomeProduct(product);
+                        setSelectedProduct(modalProduct);
+                        setIsDialogOpen(true);
+                      }}
+                      className="mt-auto w-full py-2.5 rounded-full text-sm font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-sm hover:shadow-md"
+                    >
                       Reveal My Jar 🎁
                     </button>
                   </div>

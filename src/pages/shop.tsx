@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from '@dr.pogodin/react-helmet';
 import { motion, AnimatePresence } from 'motion/react';
+import ProductModal from '@/components/product/ProductModal';
 import { Link } from 'react-router';
 import { Heart } from 'lucide-react';
 import { useCart } from '@/contexts/use-cart';
@@ -8,7 +9,7 @@ import { formatPrice } from '@/lib/stripe/format';
 import GoldDivider from '@/components/ui/gold-divider';
 
 // ── Product type ─────────────────────────────────────────────────────────────
-interface Product {
+export interface Product {
   id: string;
   priceId: string;
   name: string;
@@ -33,7 +34,7 @@ const PRODUCTS: Product[] = [
     priceId: 'price_1U6aqGSaqPwjhIoENVKFYuXu',
     name: 'Starter Sparkle',
     description: '1 mystery jewellery piece — a dainty ring, earring, or pendant. Perfect little treat for yourself.',
-    images: ['https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/products/starter-sparkle'],
+    images: ['products/product-1.png'],
     amount: 50000,
     currency: 'inr',
     recurring: null,
@@ -49,7 +50,7 @@ const PRODUCTS: Product[] = [
     priceId: 'price_1U6aqNSaqPwjhIoE7KPC1NOF',
     name: 'Golden Glow',
     description: '2–3 mystery jewellery pieces — rings, earrings, or a dainty necklace. A golden surprise awaits.',
-    images: ['https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/products/golden-glow'],
+    images: ['products/product-2.png'],
     amount: 100000,
     currency: 'inr',
     recurring: null,
@@ -65,7 +66,7 @@ const PRODUCTS: Product[] = [
     priceId: 'price_1U6aqVSaqPwjhIoEf09rvbRL',
     name: 'Treasure Trove',
     description: '4–5 curated jewellery pieces — our bestseller mix of rings, earrings, and bracelets. Premium sealed jar.',
-    images: ['https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/products/treasure-trove'],
+    images: ['products/product-3.png'],
     amount: 200000,
     currency: 'inr',
     recurring: null,
@@ -81,7 +82,7 @@ const PRODUCTS: Product[] = [
     priceId: 'price_1U6aqdSaqPwjhIoEynwEeiWU',
     name: 'Royal Collection',
     description: '8–10 premium jewellery pieces — statement and everyday pieces in a luxury sealed jar with gift box.',
-    images: ['https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/products/royal-collection'],
+    images: ['products/product-4.png'],
     amount: 500000,
     currency: 'inr',
     recurring: null,
@@ -97,7 +98,7 @@ const PRODUCTS: Product[] = [
     priceId: 'price_1U6aqlSaqPwjhIoECGYeb6q0',
     name: 'Grand Luxe',
     description: '15+ luxury jewellery pieces — rings, necklaces, earrings, bracelets, anklets. The ultimate Jaraa haul in a signature gift box.',
-    images: ['https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/products/grand-luxe'],
+    images: ['products/product-5.png'],
     amount: 1000000,
     currency: 'inr',
     recurring: null,
@@ -117,7 +118,7 @@ const occasions = [
     emoji: '🪢',
     name: 'Gift for Sister',
     subtitle: 'Raksha Bandhan Special',
-    src: 'https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/occasions/rakshabandhan',
+    src: '/products/occasion-1.png',
     alt: 'Sisters celebrating Raksha Bandhan',
     description: "Make this Rakhi extra special! Surprise your sister with a mystery jar full of jewellery she'll absolutely love — because she deserves more than just a sweet.",
     tag: 'Rakhi 2026',
@@ -129,7 +130,7 @@ const occasions = [
     emoji: '🌸',
     name: 'Gift for Mom',
     subtitle: "Mother's Day Special",
-    src: 'https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/occasions/mothers-day',
+    src: '/products/occasion-2.png',
     alt: 'Mother and daughter celebrating together',
     description: "She gave you everything — give her a jar full of sparkle. Our Mother's Day jars are curated with elegant, timeless pieces she'll treasure forever.",
     tag: "Mother's Day",
@@ -141,7 +142,7 @@ const occasions = [
     emoji: '🤰',
     name: 'Gift for Mom-to-Be',
     subtitle: 'Baby Shower & Pregnancy',
-    src: 'https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/occasions/mom-to-be',
+    src: '/products/occasion-3.png',
     alt: 'Pregnant woman celebrating baby shower',
     description: "Celebrate the most magical journey! Our Mom-to-Be jars are filled with delicate, comfortable jewellery perfect for a glowing mama — a beautiful baby shower gift.",
     tag: 'Baby Shower',
@@ -153,7 +154,7 @@ const occasions = [
     emoji: '💍',
     name: 'Gift for Bride-to-Be',
     subtitle: 'Bridal Shower & Engagement',
-    src: 'https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/occasions/bride-to-be',
+    src: '/products/occasion-4.png',
     alt: 'Bride to be bridal shower celebration',
     description: "She said yes — now let's celebrate! Our Bride-to-Be jars are packed with stunning bridal jewellery pieces, perfect for the pre-wedding glow-up.",
     tag: 'Bridal Special',
@@ -594,83 +595,17 @@ export default function ShopPage() {
       </main>
 
       {/* ── Detail Modal ── */}
-      {isDialogOpen && selectedProduct && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
-          onClick={() => setIsDialogOpen(false)}
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.92 }}
-            transition={{ duration: 0.25 }}
-            className="bg-card rounded-3xl max-w-md w-full max-h-[90vh] overflow-auto shadow-2xl"
-            style={{ border: '2px solid hsl(var(--accent)/0.4)' }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Image */}
-            <div className="relative h-52 overflow-hidden rounded-t-3xl">
-              <img
-                src={selectedProduct.images[0]}
-                alt={selectedProduct.name}
-                className="w-full h-full object-cover"
-                width={400}
-                height={400}
-              />
-              <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to top, hsl(var(--primary)/0.5), transparent 60%)' }} />
-              <button
-                onClick={() => setIsDialogOpen(false)}
-                className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 text-white flex items-center justify-center hover:bg-black/60 transition-colors"
-                aria-label="Close"
-              >
-                ✕
-              </button>
-            </div>
-
-            <div className="p-6 flex flex-col gap-4">
-              <div>
-                <p className="text-2xl mb-1">{selectedProduct.emoji}</p>
-                <h2 className="text-2xl font-bold text-foreground" style={{ fontFamily: 'var(--font-heading)' }}>
-                  {selectedProduct.name}
-                </h2>
-                <p className="text-3xl font-extrabold mt-1" style={{ color: 'hsl(var(--accent))', fontFamily: 'var(--font-heading)' }}>
-                  {formatPrice(selectedProduct.amount, selectedProduct.currency)}
-                </p>
-              </div>
-
-              <p className="text-sm text-muted-foreground leading-relaxed">{selectedProduct.description}</p>
-
-              <div>
-                <p className="text-sm font-bold text-foreground mb-2" style={{ fontFamily: 'var(--font-heading)' }}>What's inside:</p>
-                <ul className="flex flex-col gap-1.5">
-                  {selectedProduct.contents.map((item, ci) => (
-                    <li key={ci} className="text-sm text-muted-foreground flex items-start gap-2">
-                      <span style={{ color: 'hsl(var(--accent))' }} className="mt-0.5 shrink-0">✦</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="flex flex-col gap-2 pt-2">
-                <button
-                  onClick={() => { handleAddToCart(selectedProduct); setIsDialogOpen(false); }}
-                  className="w-full py-3 rounded-full font-bold text-sm border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
-                >
-                  Add to Cart 🛒
-                </button>
-                <button
-                  onClick={() => { setIsDialogOpen(false); handleCheckout(selectedProduct); }}
-                  disabled={checkoutLoading === selectedProduct.id}
-                  className="w-full py-3 rounded-full font-bold text-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-md disabled:opacity-60"
-                >
-                  {checkoutLoading === selectedProduct.id ? 'Processing...' : 'Buy Now 🎁'}
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      )}
+      <ProductModal
+        open={isDialogOpen}
+        product={selectedProduct}
+        onClose={() => setIsDialogOpen(false)}
+        onAddToCart={(p) => handleAddToCart(p)}
+        onBuyNow={(p) => {
+          setIsDialogOpen(false);
+          handleCheckout(p);
+        }}
+        checkingOut={checkoutLoading}
+      />
     </>
   );
 }

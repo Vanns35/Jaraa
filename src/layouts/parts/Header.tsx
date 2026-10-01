@@ -40,7 +40,7 @@ export default function Header() {
             <div className="flex shrink-0 items-center gap-2 lg:gap-3">
               <Link to="/" className="flex items-center shrink-0" aria-label="Jaraa home">
                 <img
-                  src="https://reawlab5w2.preview.c40.airoapp.ai/airo-assets/images/logo/horizontal"
+                  src="/header/logo.png"
                   alt="Jaraa — Jewellery Surprises"
                   className="block h-auto max-h-16 w-auto max-w-[180px] object-contain"
                   fetchPriority="high"
